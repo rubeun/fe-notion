@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 import convertCSVtoObjArr from './services/data';
 import Home from './routes/Home';
@@ -24,13 +24,13 @@ const App = () => {
     }
   }
 
-  const searchData = searchValue => {
+  const searchData = useCallback(searchValue => {
     const results = [...uniData].filter(data => 
       // Searches through University Names Only
       data.INSTNM.toLowerCase().includes(searchValue.toLowerCase())
     );
     setSearchResults(results);
-  };
+  },[uniData]);
 
   useEffect(() => {
     initialUnivDataLoad();
