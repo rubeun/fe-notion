@@ -15,11 +15,21 @@ const App = () => {
         .then(convertedObjArr => {
           console.log(convertedObjArr);
           setUniData(convertedObjArr);
+          searchData("State"); // TEST
         });
     } catch (error) {
       console.error("CSV Data failed to load", error);
     }
   }
+
+  const searchData = searchValue => {
+    const results = [...uniData].filter(data => 
+      // Searches through University Names Only
+      data.INSTNM.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    console.log(results);
+  };
+
 
   useEffect(() => {
     initialUnivDataLoad();
