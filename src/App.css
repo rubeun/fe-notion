@@ -22,6 +22,11 @@ a:hover {
   opacity: 60%;
 }
 
+.text-medium {
+  color: var(--black);
+  opacity: 60%;
+}
+
 /* Nav Bar */
 .nav-bar {
   display: flex;
@@ -98,6 +103,18 @@ a:hover {
   padding-top: 2rem;
 }
 
+/* Search Input */
+#search-input {
+  width: 17rem;
+  height: 2.75rem;
+  border: 2px solid var(--light-grey);
+  border-radius: 0.25rem;
+  padding-left: 1rem;
+  font-size: 0.875rem;
+  margin: 3rem 0;
+}
+
+
 /* @@@ LARGE MOBILE @@@ */
 @media only screen and (min-width: 500px) {
   .nav-bar {
@@ -110,6 +127,9 @@ a:hover {
   }
   .hero-titles {
     padding-right: 7.5rem;
+  }  
+  #search-input {
+    width: 19rem;
   }  
 }
 
@@ -133,5 +153,8 @@ a:hover {
   .hero-image {
     width: 24rem;
     padding: 0;
+  }
+  #search-input {
+    width: 24rem;
   }
 }
