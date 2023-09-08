@@ -1,3 +1,87 @@
+:root {
+  --black: rgba(0, 0, 0, 1);
+  --dark-grey: rgba(0, 0, 0, 0.60);
+  --light-grey: rgba(238, 238, 238, 1);
+  --white: rgba(255, 255, 255, 1);
+  --red: rgba(225, 98, 89, 1);
+  --box-shadow: rgba(0, 0, 0, 0.20);
+}
+
 .App {
-  text-align: center;
+  background-color: var(--white);
+  padding: 2.5rem 2rem;
+  color: var(--black);
+}
+
+a {
+  color: var(--red);
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 60%;
+}
+
+/* Nav Bar */
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 4rem;
+}
+
+.nav-title {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 145%; /* 2.175rem */
+}
+
+.nav-title a {
+  color: var(--black);
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links > li {
+  list-style: none;
+}
+
+.nav-links > li:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.nav-links a {
+  color: var(--black);
+  font-size: 1.0625rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.59375rem */
+}
+
+.nav-active {
+  border-bottom: 2px solid var(--red)
+}
+
+/* @@@ LARGE MOBILE @@@ */
+@media only screen and (min-width: 500px) {
+  .nav-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* @@@ DESKTOP @@@ */
+@media only screen and (min-width: 1200px) {
+  .App {
+    padding: 2.5rem 7.5rem;
+  }
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    padding-bottom: 8rem;
+  }
 }
