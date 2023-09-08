@@ -12,6 +12,10 @@ const App = () => {
       fetch(UNI_DATA)
         .then(response => response.text())
         .then(responseText => convertCSVtoObjArr(responseText))
+        .then(convertedObjArr => {
+          console.log(convertedObjArr);
+          setUniData(convertedObjArr);
+        });
     } catch (error) {
       console.error("CSV Data failed to load", error);
     }

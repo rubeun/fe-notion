@@ -8,7 +8,20 @@ const convertCSVtoObjArr = csvData => {
 
   // # Split data into array of strings, first string being the headers #
   const csvDataArr = csvData.toString().split("\n");
-  console.log(csvDataArr);
+
+  // # Get Headers as Keys # 
+  const jsonKeys = csvDataArr[0].toString().split(",");
+
+  // # Parse CSV value strings into corresponding key values # 
+  for (let i = 1; i < csvDataArr.length; i++) {
+    const valuesArr = csvDataArr[i].split(",");
+    let valuesObj = {};
+    for (let j = 0; j < jsonKeys.length; j++) {
+      valuesObj[jsonKeys[j]] = valuesArr[j];
+    }
+    resultArr.push(valuesObj);
+  }
+  return resultArr;
 }
 
 export default convertCSVtoObjArr;
