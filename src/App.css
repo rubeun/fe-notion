@@ -65,6 +65,39 @@ a:hover {
   border-bottom: 2px solid var(--red)
 }
 
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-title {
+  font-size: 2.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 4.3125rem */
+  letter-spacing: -0.11563rem;
+  padding-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 145%; /* 1.8125rem */
+}
+
+.hero-image {
+  width: 12rem;
+  padding-top: 2rem;
+}
+
 /* @@@ LARGE MOBILE @@@ */
 @media only screen and (min-width: 500px) {
   .nav-bar {
@@ -72,6 +105,12 @@ a:hover {
     justify-content: space-between;
     align-items: center;
   }
+  .hero-section {
+    flex-direction: row;
+  }
+  .hero-titles {
+    padding-right: 7.5rem;
+  }  
 }
 
 /* @@@ DESKTOP @@@ */
@@ -83,5 +122,16 @@ a:hover {
     display: flex;
     align-items: center;
     padding-bottom: 8rem;
+  }
+  .hero-title {
+    width: 35rem;
+    font-size: 4.3125rem;
+  }
+  .hero-subtitle {
+    width: 36rem;
+  }
+  .hero-image {
+    width: 24rem;
+    padding: 0;
   }
 }
