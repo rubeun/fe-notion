@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from './SearchBox.module.css';
 
 const SearchBox = ({ searchData }) => {
   const [searchValue, setSearchValue] = useState("");
@@ -9,13 +10,14 @@ const SearchBox = ({ searchData }) => {
   }
 
   return (
-    <div className="search-box">
+    <div className={styles.searchBox}>
       <input 
         value={searchValue} 
-        id="search-input" 
+        id={styles.searchInput} 
         type="text" 
         placeholder="Search..." 
-        onChange={handleSearch} 
+        onChange={handleSearch}
+        aria-label='Search University Names' 
       />
     </div>
   );

@@ -1,8 +1,9 @@
-import ResultCard from "./ResultCard";
+import ResultCard from "../ResultCard/ResultCard";
+import styles from './ResultsGrid.module.css';
 
 const ResultsGrid = ({ resultsArr }) => {
   return (
-    <div className="results-grid">
+    <div className={styles.resultsGrid}>
       {resultsArr.length > 0 ?
         resultsArr.map(result => (
           <ResultCard uniData={result} key={result.UNITID} />

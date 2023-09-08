@@ -1,0 +1,24 @@
+/* Search Input */
+#searchInput {
+  width: 17rem;
+  height: 2.75rem;
+  border: 2px solid var(--light-grey);
+  border-radius: 0.25rem;
+  padding-left: 1rem;
+  font-size: 0.875rem;
+  margin: 3rem 0;
+}
+
+/* @@@ LARGE MOBILE @@@ */
+@media only screen and (min-width: 500px) {
+  #searchInput {
+    width: 19rem;
+  }  
+}
+
+/* @@@ DESKTOP @@@ */
+@media only screen and (min-width: 1200px) {
+  #searchInput {
+    width: 24rem;
+  }
+}
