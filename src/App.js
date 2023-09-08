@@ -39,7 +39,7 @@ const App = () => {
   return (
     <div className="App">
       <NavBar />
-      <Home />
+      <Home searchData={searchData} searchResults={searchResults} />
     </div>
   );
 }

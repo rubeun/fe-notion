@@ -1,7 +1,12 @@
-const ResultsGrid = () => {
+const ResultsGrid = ({ resultsArr }) => {
   return (
     <div className="results-grid">
-      RESULTS GRID
+      {resultsArr.length > 0 ?
+        resultsArr.map(result => (
+          <p key={result.UNITID}>{result.INSTNM}</p>
+        ))
+      : <p>No Results</p>
+      }
     </div>
   );
 }
