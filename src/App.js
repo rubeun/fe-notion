@@ -6,6 +6,7 @@ const UNI_DATA = 'https://gist.githubusercontent.com/simonlast/d5a86ba0c82e1b0d9
 
 const App = () => {
   const [uniData, setUniData] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
 
   const initialUnivDataLoad = () => {
     try {
@@ -13,9 +14,8 @@ const App = () => {
         .then(response => response.text())
         .then(responseText => convertCSVtoObjArr(responseText))
         .then(convertedObjArr => {
-          console.log(convertedObjArr);
           setUniData(convertedObjArr);
-          searchData("State"); // TEST
+          setSearchResults(convertedObjArr);  
         });
     } catch (error) {
       console.error("CSV Data failed to load", error);
@@ -27,9 +27,8 @@ const App = () => {
       // Searches through University Names Only
       data.INSTNM.toLowerCase().includes(searchValue.toLowerCase())
     );
-    console.log(results);
+    setSearchResults(results);
   };
-
 
   useEffect(() => {
     initialUnivDataLoad();
