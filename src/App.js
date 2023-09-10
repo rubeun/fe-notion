@@ -9,6 +9,7 @@ const UNI_DATA = 'https://gist.githubusercontent.com/simonlast/d5a86ba0c82e1b0d9
 const App = () => {
   const [uniData, setUniData] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const initialUnivDataLoad = () => {
     try {
@@ -17,8 +18,9 @@ const App = () => {
         .then(responseText => convertCSVtoObjArr(responseText))
         .then(convertedObjArr => {
           setUniData(convertedObjArr);
-          setSearchResults(convertedObjArr);  
-        });
+          setSearchResults(convertedObjArr);
+        })
+        .then(() => setLoading(false));
     } catch (error) {
       console.error("CSV Data failed to load", error);
     }
@@ -39,7 +41,7 @@ const App = () => {
   return (
     <div className="App">
       <NavBar />
-      <Home searchData={searchData} searchResults={searchResults} />
+      <Home searchData={searchData} searchResults={searchResults} loading={loading} />
     </div>
   );
 }
